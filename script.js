@@ -15,8 +15,8 @@ const questions = [
 {
     question: "Which is more accurate?",
     options: [
-        "Talking about suicide can put the idea in someone's head",
-        "Asking directly does not increase suicidal thoughts"
+        "Asking someone if they're thinking about suicide can put the idea in someone's head",
+        "Asking someone if they're thinking about suicide does not increase suicidal thoughts"
     ],
     correct: 1,
     explanation: "Research shows that asking directly about suicide <strong>does not increase suicidal thoughts</strong>."
@@ -225,6 +225,10 @@ function loadQuestion(){
         <button class="answer-btn" onclick="answer(1)">
             ${q.options[1]}
         </button>
+
+        <button class="secondary-btn" onclick="skipQuestion()">
+            Try Another Question
+        </button>
     `;
 }
 
@@ -256,6 +260,26 @@ function answer(choice){
             Continue →
         </button>
     `;
+}
+
+function skipQuestion(){
+
+    const usedQuestions = chosenQuestions.map(q=> q.question);
+
+    const available = questions
+        .filter(q => !usedQuestions.includes(q.question));
+
+    if(available.length === 0){
+        return;
+    }
+
+    const replacement =
+        randomizeOptions(
+            available[Math.floor(Math.random() * available.length)]
+            );
+    chosenQuestions[currentQuestion] = replacement;
+
+    loadQuestion();
 }
 
 function showComplete(){
