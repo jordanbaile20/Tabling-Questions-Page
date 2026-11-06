@@ -226,7 +226,10 @@ function loadQuestion(){
             ${q.options[1]}
         </button>
 
-        <button class="secondary-btn" onclick="skipQuestion()">
+        <button    
+            class="secondary-btn"
+            style ="margin-top:24px;"
+            onclick="skipQuestion()">
             Try Another Question
         </button>
     `;
