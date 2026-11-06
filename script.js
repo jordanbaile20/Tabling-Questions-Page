@@ -3,13 +3,13 @@ const TOTAL_QUESTIONS = 2;
 const questions = [
 
 {
-    question: "Which is more strongly associated with suicidal thoughts?",
+    question: "Myth or Fact?",
     options: [
-        "Feeling sad",
-        "Feeling trapped with no way forward"
+        "Talking to someone about suicide can put the idea in their head",
+        "Research has not found that asking directly about suicide increases suicidal thoughts"
     ],
     correct: 1,
-    explanation: "Feelings of <strong>entrapment</strong> and <strong>hopelessness</strong> are often stronger indicators of suicide risk than sadness alone."
+    explanation: "Research has consistently found that asking directly about suicide does not increase suicidal thoughts. Many people feel relieved when someone asks openly and without judgment."
 },
 
 {
@@ -19,147 +19,157 @@ const questions = [
         "211"
     ],
     correct: 1,
-    explanation: "211 connects people with <strong>housing</strong>, <strong>food</strong>, <strong>utility assistance</strong>, <strong>transportation</strong>, and many other community resources."
-},
-
-{
-    question: "Which is more protective against suicide?",
-    options: [
-        "Feeling independent",
-        "Feeling connected to other people"
-    ],
-    correct: 1,
-    explanation: "Strong <strong>social connection</strong> and a sense of <strong>belonging</strong> are among the most well-established protective factors against suicide."
-},
-
-{
-    question: "Which has a greater influence on wellbeing?",
-    options: [
-        "Personal choices",
-        "Living conditions and environment"
-    ],
-    correct: 1,
-    explanation: "<strong>Housing</strong>, <strong>safety</strong>, <strong>transportation</strong>, <strong>social connection</strong>, and <strong>opportunity</strong> all influence wellbeing."
-},
-
-{
-    question: "Which is the bigger barrier?",
-    options: [
-        "Resources don't exist",
-        "Resources exist but people can't find them"
-    ],
-    correct: 1,
-    explanation: "Many communities already have resources available. The challenge is often <strong>finding</strong>, <strong>understanding</strong>, and <strong>accessing</strong> those services."
-},
-
-{
-    question: "Which is more closely linked to suicide risk?",
-    options: [
-        "The number of problems a person has",
-        "Whether they believe things can improve"
-    ],
-    correct: 1,
-    explanation: "<strong>Hopelessness</strong> and a belief that things cannot improve are strongly associated with suicide risk."
-},
-
-{
-    question: "Which may prevent more future crises?",
-    options: [
-        "Affordable housing",
-        "Additional psychiatric beds"
-    ],
-    correct: 0,
-    explanation: "Housing stability affects <strong>stress</strong>, <strong>safety</strong>, <strong>financial wellbeing</strong>, and access to <strong>community support</strong>."
-},
-
-{
-    question: "Which is more likely to improve community mental health?",
-    options: [
-        "Mental health awareness campaigns",
-        "Places where people naturally connect"
-    ],
-    correct: 1,
-    explanation: "Places that encourage <strong>belonging</strong> and <strong>connection</strong> are strongly associated with positive mental health."
-},
-
-{
-    question: "Which helps more during emotional distress?",
-    options: [
-        "Knowing someone cares",
-        "Receiving advice"
-    ],
-    correct: 0,
-    explanation: "People often benefit from feeling <strong>understood</strong> and <strong>supported</strong> before they are ready to receive advice."
-},
-
-{
-    question: "When does suicide prevention begin?",
-    options: [
-        "When someone calls 988",
-        "Before a crisis develops"
-    ],
-    correct: 1,
-    explanation: "Modern prevention efforts focus on community conditions, support systems, and resources long before a crisis occurs."
-},
-
-{
-    question: "If you're worried about someone, which is more likely to be true about asking them directly about suicide?",
-    options: [
-        "It tends to introduce thoughts they hadn't had before",
-        "It tends to give them room to talk about thoughts they already have"
-    ],
-    correct: 1,
-    explanation: "Research has not found that asking about suicide increases suicidal thoughts. For many people, being asked directly brings <strong>relief</strong> and opens a <strong>conversation</strong>."
+    explanation: "211 connects people with housing resources, utility assistance, food programs, transportation options, and many other community services."
 },
 
 {
     question: "When someone contacts 988, which outcome is more common?",
     options: [
-        "A responder talks with them and the contact ends without emergency dispatch",
-        "A responder arranges for emergency services to go to their location"
+        "The conversation is resolved through support and counseling",
+        "Emergency responders are dispatched"
     ],
     correct: 0,
-    explanation: "Most contacts are resolved through <strong>conversation alone</strong>. Emergency dispatch is used in only a small share of cases."
+    explanation: "Most contacts to 988 are resolved through conversation and support. Emergency intervention is used in a relatively small percentage of cases."
+},
+
+{
+    question: "Myth or Fact?",
+    options: [
+        "People considering suicide never show warning signs",
+        "Many people show warning signs or noticeable changes beforehand"
+    ],
+    correct: 1,
+    explanation: "Changes in mood, behavior, sleep, withdrawal, hopelessness, or talking about death are often noticed before a suicide attempt."
+},
+
+{
+    question: "Which is more strongly associated with suicide risk?",
+    options: [
+        "The number of problems a person has",
+        "Believing things cannot improve"
+    ],
+    correct: 1,
+    explanation: "Hopelessness and feeling trapped or unable to imagine improvement are among the strongest indicators of suicide risk."
+},
+
+{
+    question: "Which statement is more accurate?",
+    options: [
+        "Friends and family can contact 988 if they're worried about someone",
+        "Only the person in crisis can contact 988"
+    ],
+    correct: 0,
+    explanation: "988 supports people seeking help for themselves as well as family members, friends, teachers, coworkers, and others concerned about someone."
+},
+
+{
+    question: "Myth or Fact?",
+    options: [
+        "Making a dangerous method harder to access can save lives",
+        "People who are suicidal will always find another way"
+    ],
+    correct: 0,
+    explanation: "Research suggests many suicidal crises are temporary. Creating time and distance from highly lethal methods can save lives."
+},
+
+{
+    question: "Which is more protective against suicide?",
+    options: [
+        "Feeling connected to other people",
+        "Handling everything alone"
+    ],
+    correct: 0,
+    explanation: "A sense of connection and belonging is one of the most established protective factors against suicide."
+},
+
+{
+    question: "Myth or Fact?",
+    options: [
+        "Once someone has decided on suicide, nothing can be done",
+        "Many suicidal crises can be interrupted through support and intervention"
+    ],
+    correct: 1,
+    explanation: "Suicidal crises often change over time. Support, practical help, treatment, and connection can all reduce risk."
 },
 
 {
     question: "Which is a more accurate description of intense suicidal urges?",
     options: [
-        "They often ease with time, even if the underlying problem remains",
-        "They usually stay just as strong until the underlying problem is solved"
+        "They often become less intense with time and support",
+        "They stay equally strong until every problem is solved"
     ],
     correct: 0,
-    explanation: "The most intense moments of a crisis are often <strong>temporary</strong>. Time, support, and safety can help someone get through the peak, even before the larger problems are resolved."
+    explanation: "The most intense moments of a crisis are often temporary. Support and safety can help people get through the peak."
 },
 
 {
-    question: "Which is more accurate about calling 211?",
+    question: "Which call would be a good fit for 211?",
     options: [
-        "They help you find local services based on your situation",
-        "They connect you to services only after confirming you qualify"
+        "Finding food, housing, transportation, or utility assistance",
+        "Reporting a crime in progress"
     ],
     correct: 0,
-    explanation: "211 helps people <strong>find and understand</strong> local resources. Individual services may have their own eligibility rules, but you don't have to qualify just to ask what's available."
+    explanation: "211 helps connect people with local health and human services, including food programs, housing supports, transportation assistance, and more."
 },
 
 {
-    question: "After someone has been through a crisis, which tends to be more helpful?",
+    question: "What does 'upstream' prevention mean?",
     options: [
-        "Giving them space to recover on their own terms",
-        "Staying in light, regular contact, like a brief message"
+        "Reducing stressors before they become crises",
+        "Responding more quickly after a crisis begins"
     ],
-    correct: 1,
-    explanation: "Studies of <strong>caring contacts</strong>, such as brief check-in messages after a crisis, have been linked to fewer later attempts. Low-pressure contact tells people they haven't been forgotten."
+    correct: 0,
+    explanation: "Upstream prevention focuses on conditions that influence wellbeing before a crisis develops, such as housing, social connection, and financial stability."
 },
 
 {
-    question: "Which statement better matches research on limiting access to dangerous means during a crisis?",
+    question: "Myth or Fact?",
     options: [
-        "People usually find another way, so it makes little difference",
-        "Added time and distance can give a crisis a chance to pass"
+        "People who talk about suicide should always be taken seriously",
+        "Most people who talk about suicide are not serious"
+    ],
+    correct: 0,
+    explanation: "Expressions of suicidal thoughts should always be taken seriously and met with support and concern."
+},
+
+{
+    question: "Which statement is more accurate about 211?",
+    options: [
+        "You can contact 211 even if you're not sure what help you need",
+        "You need to know exactly which program you qualify for before calling"
+    ],
+    correct: 0,
+    explanation: "211 specialists help people understand available resources and navigate local services."
+},
+
+{
+    question: "When does suicide prevention begin?",
+    options: [
+        "Before a crisis develops",
+        "Only when someone contacts a crisis line"
+    ],
+    correct: 0,
+    explanation: "Suicide prevention includes strengthening communities, reducing stressors, increasing support, and improving access to resources long before a crisis occurs."
+},
+
+{
+    question: "Which has a greater impact on wellbeing than many people realize?",
+    options: [
+        "Housing stability and basic needs",
+        "Willpower alone"
+    ],
+    correct: 0,
+    explanation: "Housing, food security, safety, transportation, and financial stability all influence mental health and wellbeing."
+},
+
+{
+    question: "Myth or Fact?",
+    options: [
+        "People who survive a suicide attempt never need additional support",
+        "A previous suicide attempt can increase future risk"
     ],
     correct: 1,
-    explanation: "Many suicidal crises are brief, and research suggests most people <strong>do not simply switch methods</strong> when one is harder to reach. Time and distance can save lives."
+    explanation: "A previous suicide attempt is one of the strongest known risk factors for future attempts. Ongoing support can be important."
 },
 
 {
@@ -169,117 +179,27 @@ const questions = [
         "Completed suicide"
     ],
     correct: 0,
-    explanation: "'Completed' can sound like an achievement. <strong>Died by suicide</strong> is neutral and factual, and it avoids framing a death as a success or a crime."
+    explanation: "'Died by suicide' is generally preferred because it is neutral and avoids language that can sound like an achievement or a crime."
 },
 
 {
-    question: "A coworker has seemed down for weeks but hasn't mentioned suicide. Which is a reasonable step?",
+    question: "A coworker seems down for weeks but hasn't mentioned suicide. Which is a reasonable step?",
     options: [
-        "Call or text 988 to talk through how to support them",
-        "Wait until they bring up suicide before contacting a crisis line"
+        "Call or text 988 for guidance on how to support them",
+        "Wait until they mention suicide before seeking advice"
     ],
     correct: 0,
-    explanation: "You don't need certainty, or to be the person in crisis, to contact 988. Responders can help <strong>friends, family, and coworkers</strong> think through how to support someone they're worried about."
-},
-
-{
-    question: "When a crisis seems to be set off by one event, like a job loss, what's usually going on?",
-    options: [
-        "The event was the main cause",
-        "The event landed on top of stress that had been building"
-    ],
-    correct: 1,
-    explanation: "Suicide rarely has a <strong>single cause</strong>. A triggering event often arrives on top of <strong>accumulated pressures</strong> like isolation, strain, and loss."
-},
-
-{
-    question: "A neighbor is facing eviction but seems calm about it. Which response fits best?",
-    options: [
-        "Respect their calm and give them privacy",
-        "Check in gently and offer to help find support"
-    ],
-    correct: 1,
-    explanation: "Housing instability is a recognized <strong>stressor</strong>, and people don't always look distressed from the outside. A gentle check-in keeps the door open without pressure, and a service like <strong>211</strong> can help with next steps."
-},
-
-{
-    question: "Which is true of suicide rates during economic downturns?",
-    options: [
-        "They have tended to rise as unemployment rises",
-        "They have tended to stay steady, since causes are mostly personal"
-    ],
-    correct: 0,
-    explanation: "Research has found that rates have tended to <strong>rise</strong> when unemployment rises, which suggests that <strong>financial strain</strong> is part of the picture, not only individual factors."
-},
-
-{
-    question: "What does 'upstream' prevention mean?",
-    options: [
-        "Reducing stressors before they build into a crisis",
-        "Responding more quickly once a crisis has begun"
-    ],
-    correct: 0,
-    explanation: "Upstream prevention works on the <strong>conditions</strong> that lead to crisis, like housing, finances, and isolation. Crisis response is essential, but it begins after a crisis has already started."
-},
-
-{
-    question: "When someone doesn't reach out for help they need, which explanation is more often accurate?",
-    options: [
-        "They weren't ready to ask for help",
-        "The help was hard to find or navigate"
-    ],
-    correct: 1,
-    explanation: "Friction matters. <strong>Hard-to-find</strong>, <strong>confusing</strong>, or <strong>multi-step</strong> systems keep many people from help that already exists, which makes it partly a design problem."
-},
-
-{
-    question: "Someone keeps missing counseling appointments. Which kind of explanation is worth checking first?",
-    options: [
-        "Practical barriers, like transportation or cost",
-        "Doubts about whether counseling is worth it"
-    ],
-    correct: 0,
-    explanation: "Practical barriers are common and often <strong>fixable</strong>. Checking them first can reveal obstacles that have nothing to do with motivation, though doubts and stigma matter too."
-},
-
-{
-    question: "When someone feels hopeless, which is a more useful starting point?",
-    options: [
-        "Asking what makes their future feel closed off",
-        "Pointing out reasons to feel optimistic"
-    ],
-    correct: 0,
-    explanation: "People usually need to feel <strong>heard</strong> before reassurance can land. Understanding what is making the future feel closed off also points toward <strong>practical</strong> things that might change."
-},
-
-{
-    question: "When is helping someone with a practical need, like rent or utilities, most useful for prevention?",
-    options: [
-        "Early, before the stress has built up",
-        "After they have said they are thinking about suicide"
-    ],
-    correct: 0,
-    explanation: "Money, housing, and basic needs are tied to <strong>stress, safety, and hope</strong>. Easing a practical problem <strong>early</strong> can reduce pressure before it builds into a crisis."
+    explanation: "You do not need certainty, and you do not need to be the person in crisis, to contact 988. Counselors can help concerned friends, family members, and coworkers."
 },
 
 {
     question: "Who is most likely to notice that someone is struggling?",
     options: [
-        "Professionals trained to spot warning signs",
-        "People who see them in everyday life"
+        "Only mental health professionals",
+        "People who interact with them in everyday life"
     ],
     correct: 1,
-    explanation: "Many people in distress are not in treatment at the time, so the people in their <strong>everyday lives</strong> are often the first to notice changes."
-},
-
-{
-    question: "When someone says they feel like a burden, which response tends to help more?",
-    options: [
-        "Explaining the reasons they aren't one",
-        "Showing through steady presence that they matter"
-    ],
-    correct: 1,
-    explanation: "Feeling like a burden is a recognized risk factor. Arguments can feel dismissive, while <strong>consistent presence</strong> shows it in a way words alone may not."
+    explanation: "Many people experiencing emotional distress are not currently receiving treatment. Friends, family members, coworkers, classmates, and neighbors often notice changes first."
 }
 
 ];
