@@ -19,7 +19,7 @@ const questions = [
         "Asking someone if they're thinking about suicide <u>does not increase suicidal thoughts</u>"
     ],
     correct: 1,
-    explanation: "Many people feel relieved when someone asks <strong>openly</strong? and <strong>directly</strong>."
+    explanation: "Many people feel relieved when someone asks <strong>openly</strong> and <strong>directly</strong>."
 },
 
 {
