@@ -9,7 +9,7 @@ const questions = [
         "Emergency services are sent"
     ],
     correct: 0,
-    explanation: "Most contacts to 988 are resolved through conversation and support. Emergency intervention is used in a relatively small percentage of cases."
+    explanation: "Most contacts to 988 are resolved through <strong>conversation</strong> and <strong>support</strong> without emergency dispatch."
 },
 
 {
@@ -19,7 +19,7 @@ const questions = [
         "Asking directly does not increase suicidal thoughts"
     ],
     correct: 1,
-    explanation: "Research has consistently found that asking directly about suicide does not increase suicidal thoughts. Many people feel relieved when someone asks openly and without judgment."
+    explanation: "Research shows that asking directly about suicide <strong>does not increase suicidal thoughts</strong>."
 },
 
 {
@@ -29,7 +29,7 @@ const questions = [
         "Only the person in crisis"
     ],
     correct: 0,
-    explanation: "988 supports people seeking help for themselves as well as family members, friends, coworkers, teachers, and others concerned about someone."
+    explanation: "988 supports people seeking help for themselves or someone they care about."
 },
 
 {
@@ -39,7 +39,7 @@ const questions = [
         "Just a need or question"
     ],
     correct: 1,
-    explanation: "You do not need to know exactly what service you need before contacting 211. Specialists help connect people with appropriate local resources."
+    explanation: "You don't need to know what service you need before contacting 211. Specialists help connect people with appropriate local resources."
 },
 
 {
@@ -49,7 +49,7 @@ const questions = [
         "211"
     ],
     correct: 1,
-    explanation: "211 helps connect people with housing resources, utility assistance, food programs, transportation, and other community supports."
+    explanation: "211 helps connect people with housing, food, utility, and other local resources."
 },
 
 {
@@ -59,7 +59,7 @@ const questions = [
         "Many people show warning signs beforehand"
     ],
     correct: 1,
-    explanation: "Many people communicate distress through changes in mood, behavior, sleep, withdrawal, hopelessness, or other warning signs."
+    explanation: "Many people communicate distress through changes in <strong>mood, behavior, sleep, withdrawal, hopelessness,</strong> or other warning signs."
 },
 
 {
@@ -69,7 +69,7 @@ const questions = [
         "Suicide awareness campaigns"
     ],
     correct: 0,
-    explanation: "Awareness is important, but research has found that limiting access to highly lethal methods is one of the most effective ways to reduce suicide deaths."
+    explanation: "Awareness is important, however limiting access to lethal means is one of the most effective suicide prevention strategies."
 },
 
 {
@@ -99,7 +99,7 @@ const questions = [
         "During a crisis"
     ],
     correct: 0,
-    explanation: "Prevention includes reducing stressors, strengthening support systems, and increasing access to resources long before a crisis occurs."
+    explanation: "Prevention includes reducing stressors, strengthening support systems, and increasing access to resources <strong>long before a crisis occurs</strong>."
 },
 
 {
@@ -109,7 +109,7 @@ const questions = [
         "Support and intervention can save lives"
     ],
     correct: 1,
-    explanation: "Suicidal crises often change over time. Support, practical help, treatment, and connection can reduce risk."
+    explanation: "Suicidal crises often <strong>change over time</strong>. Support, practical help, treatment, and connection can reduce risk."
 },
 
 {
@@ -119,7 +119,7 @@ const questions = [
         "Thoughts of suicide"
     ],
     correct: 0,
-    explanation: "211 helps connect people with local resources for needs such as housing, food, utilities, transportation, and healthcare. Thoughts of suicide are generally a reason to contact 988."
+    explanation: "211 connects people with resources for needs like <strong>housing, food, utilities, and transportation</strong>."
 }
 
 ];
