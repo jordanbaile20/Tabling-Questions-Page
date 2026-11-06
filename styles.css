@@ -275,17 +275,22 @@ h1,h2{
     text-align:left;
 }
 
-.answer-item{
-    background:#f8fafc;
-    border-radius:16px;
-    padding:20px;
+.answer-item {
+    margin-bottom: 12px;
+    border-radius: 12px;
+    background: white;
+    overflow: hidden;
 }
 
-.answer-q{
-    font-weight:600;
-    color:#1f2937;
-    line-height:1.5;
-    margin-bottom:12px;
+.answer-q {
+    cursor: pointer;
+    padding: 18px;
+    font-weight: 600;
+    list-style: none;
+}
+
+.answer-content {
+    padding: 0 18px 18px;
 }
 
 .answer-option{
@@ -302,6 +307,16 @@ h1,h2{
     background:#ecfdf3;
     border:1px solid #bbf7d0;
     font-weight:600;
+}
+
+.answer-q::after {
+    content: "▼";
+    float: right;
+    color: #777;
+}
+
+details:not([open]) .answer-q::after {
+    content: "▶";
 }
 
 .answer-why{

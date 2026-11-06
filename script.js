@@ -366,17 +366,27 @@ function showAnswers(){
         </div>
     `;
 
-    const items = questions.map((q, i) => `
-        <div class="answer-item">
-            <div class="answer-q">${i + 1}. ${q.question}</div>
-            ${q.options.map((opt, idx) => `
-                <div class="answer-option ${idx === q.correct ? "is-correct" : ""}">
-                    ${idx === q.correct ? "✓ " : ""}${opt}
-                </div>
-            `).join("")}
-            <div class="answer-why">${q.explanation}</div>
+   const items = questions.map((q, i) => `
+    <details class="answer-item">
+
+        <summary class="answer-q">
+            ${i + 1}. ${q.question}
+        </summary>
+
+        <div class="answer-content">
+
+            <div class="answer-option is-correct">
+                ✓ ${q.options[q.correct]}
+            </div>
+
+            <div class="answer-why">
+                ${q.explanation}
+            </div>
+
         </div>
-    `).join("");
+
+    </details>
+`).join("");
 
     content.innerHTML = `
         <h1>All Questions &amp; Answers</h1>
