@@ -15,11 +15,11 @@ const questions = [
 {
     question: "Which is more accurate?",
     options: [
-        "Asking someone if they're thinking about suicide can put the idea in someone's head",
-        "Asking someone if they're thinking about suicide does not increase suicidal thoughts"
+        "Asking someone if they're thinking about suicide <u>can put the idea in their head</u>",
+        "Asking someone if they're thinking about suicide <u>does not increase suicidal thoughts</u>"
     ],
     correct: 1,
-    explanation: "Research shows that asking directly about suicide <strong>does not increase suicidal thoughts</strong>."
+    explanation: "Many people feel relieved when someone asks <strong>openly</strong? and <strong>directly</strong>."
 },
 
 {
@@ -55,8 +55,8 @@ const questions = [
 {
     question: "Which is more accurate?",
     options: [
-        "Most people show no warning signs before suicide",
-        "Many people show warning signs beforehand"
+        "Suicide usually happens without warning",
+        "People often show warning signs beforehand"
     ],
     correct: 1,
     explanation: "Many people communicate distress through changes in <strong>mood, behavior, sleep, withdrawal, hopelessness,</strong> or other warning signs."
@@ -75,8 +75,8 @@ const questions = [
 {
     question: "Which is more strongly linked to suicide risk?",
     options: [
-        "Having many problems",
-        "Feeling things cannot get better"
+        "Having several problems at the same time",
+        "Feeling like things cannot get better"
     ],
     correct: 1,
     explanation: "Hopelessness and feeling trapped are among the strongest indicators of suicide risk."
@@ -85,11 +85,11 @@ const questions = [
 {
     question: "Which is more accurate about a suicidal crisis?",
     options: [
-        "The most intense urges usually stay the same",
-        "The most intense urges often lessen with time"
+        "The most intense urges usually <u>stay the same</u>",
+        "The most intense urges usually <u>lessen with time</u>"
     ],
     correct: 1,
-    explanation: "The most intense moments of a crisis are often temporary. Support, safety, and time can help someone get through the peak."
+    explanation: "The most intense moments of a crisis are often temporary. <strong>Support, safety,</strong> and <strong>time</strong> can help someone get through the peak."
 },
 
 {
