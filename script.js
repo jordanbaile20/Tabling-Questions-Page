@@ -3,203 +3,123 @@ const TOTAL_QUESTIONS = 2;
 const questions = [
 
 {
-    question: "Myth or Fact?",
+    question: "When someone contacts 988, what is more common?",
     options: [
-        "Talking to someone about suicide can put the idea in their head",
-        "Research has not found that asking directly about suicide increases suicidal thoughts"
-    ],
-    correct: 1,
-    explanation: "Research has consistently found that asking directly about suicide does not increase suicidal thoughts. Many people feel relieved when someone asks openly and without judgment."
-},
-
-{
-    question: "Which service would be most appropriate for someone facing eviction?",
-    options: [
-        "988",
-        "211"
-    ],
-    correct: 1,
-    explanation: "211 connects people with housing resources, utility assistance, food programs, transportation options, and many other community services."
-},
-
-{
-    question: "When someone contacts 988, which outcome is more common?",
-    options: [
-        "The conversation is resolved through support and counseling",
-        "Emergency responders are dispatched"
+        "The conversation ends with support from a counselor",
+        "Emergency services are sent"
     ],
     correct: 0,
     explanation: "Most contacts to 988 are resolved through conversation and support. Emergency intervention is used in a relatively small percentage of cases."
 },
 
 {
-    question: "Myth or Fact?",
+    question: "Which is more accurate?",
     options: [
-        "People considering suicide never show warning signs",
-        "Many people show warning signs or noticeable changes beforehand"
+        "Talking about suicide can put the idea in someone's head",
+        "Asking directly does not increase suicidal thoughts"
     ],
     correct: 1,
-    explanation: "Changes in mood, behavior, sleep, withdrawal, hopelessness, or talking about death are often noticed before a suicide attempt."
+    explanation: "Research has consistently found that asking directly about suicide does not increase suicidal thoughts. Many people feel relieved when someone asks openly and without judgment."
 },
 
 {
-    question: "Which is more strongly associated with suicide risk?",
+    question: "Who can contact 988?",
     options: [
-        "The number of problems a person has",
-        "Believing things cannot improve"
+        "Anyone concerned about someone",
+        "Only the person in crisis"
+    ],
+    correct: 0,
+    explanation: "988 supports people seeking help for themselves as well as family members, friends, coworkers, teachers, and others concerned about someone."
+},
+
+{
+    question: "Before calling 211, what do you need?",
+    options: [
+        "To know which program you qualify for",
+        "Just a need or question"
     ],
     correct: 1,
-    explanation: "Hopelessness and feeling trapped or unable to imagine improvement are among the strongest indicators of suicide risk."
+    explanation: "You do not need to know exactly what service you need before contacting 211. Specialists help connect people with appropriate local resources."
 },
 
 {
-    question: "Which statement is more accurate?",
+    question: "Someone is facing eviction. Which number is most likely to help?",
     options: [
-        "Friends and family can contact 988 if they're worried about someone",
-        "Only the person in crisis can contact 988"
-    ],
-    correct: 0,
-    explanation: "988 supports people seeking help for themselves as well as family members, friends, teachers, coworkers, and others concerned about someone."
-},
-
-{
-    question: "Myth or Fact?",
-    options: [
-        "Making a dangerous method harder to access can save lives",
-        "People who are suicidal will always find another way"
-    ],
-    correct: 0,
-    explanation: "Research suggests many suicidal crises are temporary. Creating time and distance from highly lethal methods can save lives."
-},
-
-{
-    question: "Which is more protective against suicide?",
-    options: [
-        "Feeling connected to other people",
-        "Handling everything alone"
-    ],
-    correct: 0,
-    explanation: "A sense of connection and belonging is one of the most established protective factors against suicide."
-},
-
-{
-    question: "Myth or Fact?",
-    options: [
-        "Once someone has decided on suicide, nothing can be done",
-        "Many suicidal crises can be interrupted through support and intervention"
+        "988",
+        "211"
     ],
     correct: 1,
-    explanation: "Suicidal crises often change over time. Support, practical help, treatment, and connection can all reduce risk."
+    explanation: "211 helps connect people with housing resources, utility assistance, food programs, transportation, and other community supports."
 },
 
 {
-    question: "Which is a more accurate description of intense suicidal urges?",
+    question: "Which is more accurate?",
     options: [
-        "They often become less intense with time and support",
-        "They stay equally strong until every problem is solved"
+        "Most people show no warning signs before suicide",
+        "Many people show warning signs beforehand"
     ],
-    correct: 0,
-    explanation: "The most intense moments of a crisis are often temporary. Support and safety can help people get through the peak."
+    correct: 1,
+    explanation: "Many people communicate distress through changes in mood, behavior, sleep, withdrawal, hopelessness, or other warning signs."
 },
 
 {
-    question: "Which call would be a good fit for 211?",
+    question: "Which has stronger evidence for preventing suicide deaths?",
     options: [
-        "Finding food, housing, transportation, or utility assistance",
-        "Reporting a crime in progress"
+        "Limiting access to lethal means",
+        "Suicide awareness campaigns"
     ],
     correct: 0,
-    explanation: "211 helps connect people with local health and human services, including food programs, housing supports, transportation assistance, and more."
+    explanation: "Awareness is important, but research has found that limiting access to highly lethal methods is one of the most effective ways to reduce suicide deaths."
 },
 
 {
-    question: "What does 'upstream' prevention mean?",
+    question: "Which is more strongly linked to suicide risk?",
     options: [
-        "Reducing stressors before they become crises",
-        "Responding more quickly after a crisis begins"
+        "Having many problems",
+        "Feeling things cannot get better"
     ],
-    correct: 0,
-    explanation: "Upstream prevention focuses on conditions that influence wellbeing before a crisis develops, such as housing, social connection, and financial stability."
+    correct: 1,
+    explanation: "Hopelessness and feeling trapped are among the strongest indicators of suicide risk."
 },
 
 {
-    question: "Myth or Fact?",
+    question: "Which is more accurate about a suicidal crisis?",
     options: [
-        "People who talk about suicide should always be taken seriously",
-        "Most people who talk about suicide are not serious"
+        "The most intense urges usually stay the same",
+        "The most intense urges often lessen with time"
     ],
-    correct: 0,
-    explanation: "Expressions of suicidal thoughts should always be taken seriously and met with support and concern."
-},
-
-{
-    question: "Which statement is more accurate about 211?",
-    options: [
-        "You can contact 211 even if you're not sure what help you need",
-        "You need to know exactly which program you qualify for before calling"
-    ],
-    correct: 0,
-    explanation: "211 specialists help people understand available resources and navigate local services."
+    correct: 1,
+    explanation: "The most intense moments of a crisis are often temporary. Support, safety, and time can help someone get through the peak."
 },
 
 {
     question: "When does suicide prevention begin?",
     options: [
         "Before a crisis develops",
-        "Only when someone contacts a crisis line"
+        "During a crisis"
     ],
     correct: 0,
-    explanation: "Suicide prevention includes strengthening communities, reducing stressors, increasing support, and improving access to resources long before a crisis occurs."
+    explanation: "Prevention includes reducing stressors, strengthening support systems, and increasing access to resources long before a crisis occurs."
 },
 
 {
-    question: "Which has a greater impact on wellbeing than many people realize?",
+    question: "Which is more accurate?",
     options: [
-        "Housing stability and basic needs",
-        "Willpower alone"
-    ],
-    correct: 0,
-    explanation: "Housing, food security, safety, transportation, and financial stability all influence mental health and wellbeing."
-},
-
-{
-    question: "Myth or Fact?",
-    options: [
-        "People who survive a suicide attempt never need additional support",
-        "A previous suicide attempt can increase future risk"
+        "Once someone decides on suicide, nothing can help",
+        "Support and intervention can save lives"
     ],
     correct: 1,
-    explanation: "A previous suicide attempt is one of the strongest known risk factors for future attempts. Ongoing support can be important."
+    explanation: "Suicidal crises often change over time. Support, practical help, treatment, and connection can reduce risk."
 },
 
 {
-    question: "Which phrase do prevention organizations generally recommend?",
+    question: "Which is a reason someone might call 211?",
     options: [
-        "Died by suicide",
-        "Completed suicide"
+        "A utility shutoff notice",
+        "Thoughts of suicide"
     ],
     correct: 0,
-    explanation: "'Died by suicide' is generally preferred because it is neutral and avoids language that can sound like an achievement or a crime."
-},
-
-{
-    question: "A coworker seems down for weeks but hasn't mentioned suicide. Which is a reasonable step?",
-    options: [
-        "Call or text 988 for guidance on how to support them",
-        "Wait until they mention suicide before seeking advice"
-    ],
-    correct: 0,
-    explanation: "You do not need certainty, and you do not need to be the person in crisis, to contact 988. Counselors can help concerned friends, family members, and coworkers."
-},
-
-{
-    question: "Who is most likely to notice that someone is struggling?",
-    options: [
-        "Only mental health professionals",
-        "People who interact with them in everyday life"
-    ],
-    correct: 1,
-    explanation: "Many people experiencing emotional distress are not currently receiving treatment. Friends, family members, coworkers, classmates, and neighbors often notice changes first."
+    explanation: "211 helps connect people with local resources for needs such as housing, food, utilities, transportation, and healthcare. Thoughts of suicide are generally a reason to contact 988."
 }
 
 ];
