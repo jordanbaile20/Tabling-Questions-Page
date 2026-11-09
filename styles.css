@@ -285,11 +285,33 @@ h1,h2{
 }
 
 .answer-q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
     cursor: pointer;
     padding: 18px 20px;
     font-weight: 700;
     font size: 18px;
     list-style: none;
+}
+/*Should hide the default marker in Safari/iOS, which ignores list-style on summary */
+.answer-q::-webkit-details-marker {
+    display: none;
+}
+
+.answer-q::after {
+    content: :"▼";
+    flex: 0 0 auto;
+    color: #777;
+    font-size: 0.8em;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+/* One glyph, rotated, instead of swapping the arrow from pointing down to the side */
+details:not([open]) .answer-q::after {
+    transform: rotate(-90deg);
 }
 
 .answer-content {
@@ -312,19 +334,9 @@ h1,h2{
     font-weight:600;
 }
 
-.answer-q::after {
-    content: "▼";
-    float: right;
-    color: #777;
-}
-
 details[open] {
     border-color: #c5d7f2;
     background: #fafcff;
-}
-
-details:not([open]) .answer-q::after {
-    content: "▶";
 }
 
 .answer-why{
