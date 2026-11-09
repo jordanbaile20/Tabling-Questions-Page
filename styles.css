@@ -337,6 +337,13 @@ details:not([open]) .answer-q::after {
     font-weight:600;
 }
 
+.answer-option.is-wrong{
+    color: #991b1b;
+    background:#fef2f2;
+    border:1px solid #fecaca;
+    font-weight:600;
+}
+
 details[open] {
     border-color: #c5d7f2;
     background: #fafcff;
