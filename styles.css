@@ -120,6 +120,38 @@ h1,h2{
     background:#1d4ed8;
 }
 
+.timed-btn{
+    position:relative;
+    overflow:hidden;
+}
+
+.timed-btn:disabled,
+.timed-btn:disabled:hover{
+    background:#64748b;
+    cursor:not-allowed;
+}
+
+.timed-fill{
+    position:absolute;
+    inset:0;
+    background:#2563eb;
+    transform:scaleX(0);
+    transform-origin:left;
+    animation:timedFill var(--delay) linear forwards;
+}
+
+.timed-label{
+    position:relative; /*keeps the text above the fill */
+}
+
+.timed-btn.ready .timed-fill{
+    display:none; /*lets the normal hover color work once unlocked */
+}
+
+@keyframes timedFill{
+    to{transform:scaleX(1);}
+}
+
 .research-label{
     text-transform:uppercase;
     letter-spacing:.08em;

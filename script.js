@@ -1,5 +1,7 @@
 const TOTAL_QUESTIONS = 2;
 
+const CONTINUE_DELAY = 2000; //ms before Continue button unlocks. Here as a fallback.
+
 const questions = [
 
 {
@@ -239,6 +241,7 @@ function answer(choice){
 
     const q = chosenQuestions[currentQuestion];
     const aligned = (choice === q.correct);
+    const delay = Math.min(4000, Math.max(2000, 1500 + q.explanation.length * 12));
 
     content.innerHTML = `
         <h2>What Researchers Have Found</h2>
@@ -259,10 +262,23 @@ function answer(choice){
 
         </div>
 
-        <button class="continue-btn" onclick="nextQuestion()">
-            Continue →
+        <button 
+            class="continue-btn timed-btn"
+            id="continueBtn"
+            style="--delay:${delay}ms"
+            disabled
+            onclick="nextQuestion()">
+            <span class="timed-fill"></span>
+            <span class="timed-label">Continue →</span>
         </button>
     `;
+    setTimeout(() => {
+        const btn = document.getElementById("continueBtn");
+        if(btn){
+            btn.disabled = false;
+            btn.classList.add("ready");
+        }
+    }, delay);
 }
 
 function skipQuestion(){
