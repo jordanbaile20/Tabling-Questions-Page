@@ -292,28 +292,31 @@ h1,h2{
     cursor: pointer;
     padding: 18px 20px;
     font-weight: 700;
-    font size: 18px;
+    font-size: 18px;
     list-style: none;
 }
-/*Should hide the default marker in Safari/iOS, which ignores list-style on summary */
+
+/* Hide the default marker in Safari/iOS, which ignores list-style on summary */
 .answer-q::-webkit-details-marker {
     display: none;
 }
 
 .answer-q::after {
-    content: :"▼";
+    content: "";
     flex: 0 0 auto;
-    color: #777;
-    font-size: 0.8em;
-    line-height: 1;
+    width: 8px;
+    height: 8px;
+    margin-right: 4px;
+    border-right: 2px solid #777;
+    border-bottom: 2px solid #777;
+    transform: rotate(45deg);          /* points down (open) */
     transition: transform 0.2s ease;
 }
 
-/* One glyph, rotated, instead of swapping the arrow from pointing down to the side */
+/* Closed: point right */
 details:not([open]) .answer-q::after {
-    transform: rotate(-90deg);
+    transform: rotate(-45deg);
 }
-
 .answer-content {
     padding: 0 18px 18px;
 }
