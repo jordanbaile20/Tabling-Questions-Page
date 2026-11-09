@@ -394,7 +394,7 @@ function showAnswers(){
         <h1>All Questions &amp; Answers</h1>
 
         <p class="answers-intro">
-            The research-supported answer to each question is highlighted.
+            The research-supported answer is marked ✓ and the other option is marked ✗.
         </p>
 
         ${navButtons}
