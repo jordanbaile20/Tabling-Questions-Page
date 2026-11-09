@@ -1,5 +1,7 @@
 const TOTAL_QUESTIONS = 2;
 
+const CONTINUE_DELAY = 2000; //ms before Continue button unlocks
+
 const questions = [
 
 {
@@ -259,10 +261,23 @@ function answer(choice){
 
         </div>
 
-        <button class="continue-btn" onclick="nextQuestion()">
-            Continue →
+        <button 
+            class="continue-btn timed-btn"
+            id="continueBtn"
+            style="--delay:${CONTINUE_DELAY}ms"
+            disabled
+            onclick="nextQuestion()">
+            <span class="timed-fill"></span>
+            <span class="timed-label">Continue →</span>
         </button>
     `;
+    setTimeout(() => {
+        const btn = document.getElementById("continueBtn");
+        if(btn){
+            btn.disabled = false;
+            btn.classList.add("ready");
+        }
+    }, CONTINUE_DELAY);
 }
 
 function skipQuestion(){
