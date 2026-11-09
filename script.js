@@ -375,9 +375,11 @@ function showAnswers(){
 
         <div class="answer-content">
 
-            <div class="answer-option is-correct">
-                ✓ ${q.options[q.correct]}
-            </div>
+            ${q.options.map((opt, j) =>
+                j === q.correct
+                    ? `<div class="answer-option is-correct">✓ ${opt}</div>`
+                    : `<div class="answer-option is-wrong">✗ ${opt}</div>`
+            ).join("")}
 
             <div class="answer-why">
                 ${q.explanation}
@@ -392,7 +394,7 @@ function showAnswers(){
         <h1>All Questions &amp; Answers</h1>
 
         <p class="answers-intro">
-            The research-supported answer to each question is highlighted.
+            The research-supported answer is marked ✓ and the other option is marked ✗.
         </p>
 
         ${navButtons}
