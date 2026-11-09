@@ -13,10 +13,10 @@ const questions = [
 },
 
 {
-    question: "Which is more accurate?",
+    question: "Which is more accurate when asking someone if they're thinking about suicide?",
     options: [
-        "Asking someone if they're thinking about suicide <u>can put the idea in their head</u>",
-        "Asking someone if they're thinking about suicide <u>does not increase suicidal thoughts</u>"
+        "It can put the idea in their head",
+        "It does not increase suicidal thoughts"
     ],
     correct: 1,
     explanation: "Many people feel relieved when someone asks <strong>openly</strong> and <strong>directly</strong>."
@@ -53,9 +53,9 @@ const questions = [
 },
 
 {
-    question: "Which is more accurate?",
+    question: "Which is more accurate about warning signs before suicide?",
     options: [
-        "Suicide usually happens without warning",
+        "It usually happens without warning",
         "People often show warning signs beforehand"
     ],
     correct: 1,
@@ -83,10 +83,10 @@ const questions = [
 },
 
 {
-    question: "Which is more accurate about a suicidal crisis?",
+    question: "How do the most intense suicidal urges usually change over time?",
     options: [
-        "The most intense urges usually <u>stay the same</u>",
-        "The most intense urges usually <u>lessen with time</u>"
+        "They usually <u>stay the same</u>",
+        "They usually <u>lessen with time</u>"
     ],
     correct: 1,
     explanation: "The most intense moments of a crisis are often temporary. <strong>Support, safety,</strong> and <strong>time</strong> can help someone get through the peak."
@@ -103,7 +103,7 @@ const questions = [
 },
 
 {
-    question: "Which is more accurate?",
+    question: "Which is more accurate about helping someone who has decided on suicide?",
     options: [
         "Once someone decides on suicide, nothing can help",
         "Support and intervention can save lives"
