@@ -127,14 +127,14 @@ h1,h2{
 
 .timed-btn:disabled,
 .timed-btn:disabled:hover{
-    background:#6478b;
+    background:#64748b;
     cursor:not-allowed;
 }
 
 .timed-fill{
     position:absolute;
     inset:0;
-    background:#25663eb;
+    background:#2563eb;
     transform:scaleX(0);
     transform-origin:left;
     animation:timedFill var(--delay) linear forwards;
