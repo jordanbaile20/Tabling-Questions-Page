@@ -345,9 +345,12 @@ h1,h2{
     transition: transform 0.2s ease;
 }
 
-/* Closed: point right */
-details:not([open]) .answer-q::after {
+/* Closed: point right; open: point down */
+.answer-q::after {
     transform: rotate(-45deg);
+}
+.answer-item.is-open .answer-q::after {
+    transform: rotate(45deg);
 }
 .answer-content {
     padding: 0 18px 18px;
@@ -376,7 +379,7 @@ details:not([open]) .answer-q::after {
     font-weight:600;
 }
 
-details[open] {
+.answer-item.is-open {
     border-color: #c5d7f2;
     background: #fafcff;
 }
