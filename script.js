@@ -2,7 +2,7 @@ const TOTAL_QUESTIONS = 2;
 
 const CONTINUE_DELAY = 2000; //ms before Continue button unlocks. Here as a fallback.
 
-const TRACK_URL = "";
+const TRACK_URL = "https://script.google.com/macros/s/AKfycby7LzPqfeq_RciwbWbRbim4NeLljaD0KUEaQ67QikYIZ-B03YQ21ac1S_JBCfvwi7km/exec";
 let playId = null;
 
 function track(event, data = {}){
@@ -15,7 +15,7 @@ function track(event, data = {}){
             keepalive: true,
             body: JSON.stringify({
                 time: new Date().toISOString(),
-                playID,
+                playId,
                 event,
                 ...data
             })
