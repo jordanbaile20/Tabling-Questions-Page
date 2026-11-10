@@ -366,6 +366,46 @@ function showComplete(){
         `;
 }
 
+function setupAccordions(){
+    const DURATION = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 350;
+
+    document.querySelectorAll(".answer-item").forEach(details => {
+        const summary = details.querySelector("summary");
+        const content = details.querySelector(".answer-content");
+        let anim = null;
+
+        summary.addEventListener("click", e => {
+            e.preventDefault();
+
+            const opening = !details.classList.contains("is-open");
+
+            // Where the box is visually right now (works even mid-animation)
+            const start = details.offsetHeight;
+            if(anim) anim.cancel();
+
+            details.classList.toggle("is-open", opening);
+
+            let end;
+            if(opening){
+                details.open = true;
+                end = details.offsetHeight;                      // natural open height
+            } else {
+                end = details.offsetHeight - content.offsetHeight; // summary + borders only
+            }
+
+            anim = details.animate(
+                { height: [start + "px", end + "px"] },
+                { duration: DURATION, easing: "ease" }
+            );
+
+            anim.onfinish = () => {
+                if(!opening) details.open = false;
+                anim = null;
+            };
+        });
+    });
+}
+
 function showAnswers(){
 
     document.getElementById("progressFill").style.width = "100%";
@@ -421,6 +461,7 @@ function showAnswers(){
 
         ${navButtons}
     `;
+    setupAccordions();
 }
 
 function nextQuestion(){
