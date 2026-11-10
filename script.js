@@ -202,7 +202,7 @@ function showWelcome(){
             <h1>What Do You Think?</h1>
 
             <p class="subtitle" style="margin-bottom:0;">
-                Can you predict what research suggests?
+                See how your instincts compare to what researchers have found
             </p>
 
             <button class="continue-btn" style="margin-top:28px;" onclick="startChallenge()">
@@ -272,7 +272,10 @@ function answer(choice){
     const delay = Math.min(4000, Math.max(2000, 1500 + q.explanation.length * 12));
 
     content.innerHTML = `
-        <h2>What Researchers Have Found</h2>
+        <h2 class="result-heading ${aligned ? "match" : "differ"}">
+            <span class="result-icon" aria-hidden="true">${aligned ? "✓" : "✗"}</span>
+            ${aligned ? "Your prediction matched the research" : "The research suggests something different"}
+        </h2>
 
         <div class="${aligned ? "correct" : "insight"}">
 
