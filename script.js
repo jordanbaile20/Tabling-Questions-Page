@@ -2,6 +2,26 @@ const TOTAL_QUESTIONS = 2;
 
 const CONTINUE_DELAY = 2000; //ms before Continue button unlocks. Here as a fallback.
 
+const TRACK_URL = "";
+let playId = null;
+
+function track(event, data = {}){
+    if(!TRACK_URL) return;
+    try{
+        fetch(TRACK_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "text/plain" },
+            keepalive: true,
+            body: JSON.stringify({
+                time: new Date().toISOString(),
+                playID,
+                event,
+                ...data
+            })
+        });
+    }catch(e){ /* never let tracking break the quiz */ }
+}
 const questions = [
 
 {
@@ -199,7 +219,9 @@ function showWelcome(){
 
 function startChallenge(){
     currentQuestion = 0;
+    playId = Math.random().toString(36).slice(2,10);
     chosenQuestions = pickQuestions();
+    track("start");
     loadQuestion();
 }
 
@@ -241,6 +263,12 @@ function answer(choice){
 
     const q = chosenQuestions[currentQuestion];
     const aligned = (choice === q.correct);
+    track("answer", {
+        question: q.question,
+        chosen: q.options[choice],
+        correct: aligned
+    });
+    
     const delay = Math.min(4000, Math.max(2000, 1500 + q.explanation.length * 12));
 
     content.innerHTML = `
@@ -296,6 +324,8 @@ function skipQuestion(){
         randomizeOptions(
             available[Math.floor(Math.random() * available.length)]
             );
+    track("skip", { question: chosenQuestions[currentQuestion].question });
+    
     chosenQuestions[currentQuestion] = replacement;
 
     loadQuestion();
@@ -303,6 +333,7 @@ function skipQuestion(){
 
 function showComplete(){
 
+    track("complete");
     document.getElementById("progressFill").style.width = "100%";
     window.scrollTo(0, 0);
 
