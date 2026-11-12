@@ -1,4 +1,5 @@
 const TOTAL_QUESTIONS = 2;
+const IDLE_RESET = 120000;     // ms of no taps before returning to the welcome screen
 
 const CONTINUE_DELAY = 2000; //ms before Continue button unlocks. Here as a fallback.
 
@@ -22,134 +23,11 @@ function track(event, data = {}){
         });
     }catch(e){ /* never let tracking break the quiz */ }
 }
-const questions = [
-
-{
-    question: "When someone contacts 988, what is more common?",
-    options: [
-        "The conversation ends with support from a counselor",
-        "Emergency services are sent"
-    ],
-    correct: 0,
-    explanation: "Most contacts to 988 are resolved through <strong>conversation</strong> and <strong>support</strong> without emergency dispatch."
-},
-
-{
-    question: "Which is more accurate when asking someone if they're thinking about suicide?",
-    options: [
-        "It can put the idea in their head",
-        "It does not increase suicidal thoughts"
-    ],
-    correct: 1,
-    explanation: "Many people feel relieved when someone asks <strong>openly</strong> and <strong>directly</strong>."
-},
-
-{
-    question: "Who can contact 988?",
-    options: [
-        "Anyone concerned about someone",
-        "Only the person in crisis"
-    ],
-    correct: 0,
-    explanation: "988 supports people seeking help for themselves or someone they care about."
-},
-
-{
-    question: "Before calling 211, what do you need?",
-    options: [
-        "To know which program you qualify for",
-        "Just a need or question"
-    ],
-    correct: 1,
-    explanation: "You don't need to know what service you need before contacting 211. Specialists help connect people with appropriate local resources."
-},
-
-{
-    question: "Someone is facing eviction. Which number is most likely to help?",
-    options: [
-        "988",
-        "211"
-    ],
-    correct: 1,
-    explanation: "211 helps connect people with housing, food, utility, and other local resources."
-},
-
-{
-    question: "Which is more accurate about warning signs before suicide?",
-    options: [
-        "It usually happens without warning",
-        "People often show warning signs beforehand"
-    ],
-    correct: 1,
-    explanation: "Many people communicate distress through changes in <strong>mood, behavior, sleep, withdrawal, hopelessness,</strong> or other warning signs."
-},
-
-{
-    question: "Which has stronger evidence for preventing suicide deaths?",
-    options: [
-        "Limiting access to lethal means",
-        "Suicide awareness campaigns"
-    ],
-    correct: 0,
-    explanation: "Awareness is important, however limiting access to lethal means is one of the most effective suicide prevention strategies."
-},
-
-{
-    question: "Which is more strongly linked to suicide risk?",
-    options: [
-        "Having several problems at the same time",
-        "Feeling like things cannot get better"
-    ],
-    correct: 1,
-    explanation: "Hopelessness and feeling trapped are among the strongest indicators of suicide risk."
-},
-
-{
-    question: "How do the most intense suicidal urges usually change over time?",
-    options: [
-        "They usually <u>stay the same</u>",
-        "They usually <u>lessen with time</u>"
-    ],
-    correct: 1,
-    explanation: "The most intense moments of a crisis are often temporary. <strong>Support, safety,</strong> and <strong>time</strong> can help someone get through the peak."
-},
-
-{
-    question: "When does suicide prevention begin?",
-    options: [
-        "Before a crisis develops",
-        "During a crisis"
-    ],
-    correct: 0,
-    explanation: "Prevention includes reducing stressors, strengthening support systems, and increasing access to resources <strong>long before a crisis occurs</strong>."
-},
-
-{
-    question: "Which is more accurate about helping someone who has decided on suicide?",
-    options: [
-        "Once someone decides on suicide, nothing can help",
-        "Support and intervention can save lives"
-    ],
-    correct: 1,
-    explanation: "Suicidal crises often <strong>change over time</strong>. Support, practical help, treatment, and connection can reduce risk."
-},
-
-{
-    question: "Which is a reason someone might call 211?",
-    options: [
-        "A utility shutoff notice",
-        "Thoughts of suicide"
-    ],
-    correct: 0,
-    explanation: "211 connects people with resources for needs like <strong>housing, food, utilities, and transportation</strong>."
-}
-
-];
-
 const content = document.getElementById("content");
 
 let chosenQuestions = [];
 let currentQuestion = 0;
+let locked = false;
 
 const logoHTML = `
     <img
@@ -170,19 +48,35 @@ function randomizeOptions(q){
     return {
         question: q.question,
         explanation: q.explanation,
+        topic: q.topic,
         options: order.map(i => q.options[i]),
         correct: order.indexOf(q.correct)
     };
 }
 
-function pickQuestions(){
-    // Shuffle a copy, then take the first N (no duplicates)
-    const shuffled = [...questions];
-    for(let i = shuffled.length - 1; i > 0; i--){
+function shuffle(arr){
+    const a = [...arr];
+    for(let i = a.length - 1; i > 0; i--){
         const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        [a[i], a[j]] = [a[j], a[i]];
     }
-    return shuffled.slice(0, TOTAL_QUESTIONS).map(randomizeOptions);
+    return a;
+}
+
+function pickQuestions(){
+    // One question from each topic first (guarantees the mix),
+    // then fill any remaining slots from the rest of the pool.
+    const topics = shuffle([...new Set(questions.map(q => q.topic))]);
+    const picked = [];
+    topics.forEach(t => {
+        if(picked.length < TOTAL_QUESTIONS){
+            picked.push(shuffle(questions.filter(q => q.topic === t))[0]);
+        }
+    });
+    shuffle(questions.filter(q => !picked.includes(q)))
+        .slice(0, TOTAL_QUESTIONS - picked.length)
+        .forEach(q => picked.push(q));
+    return shuffle(picked).map(randomizeOptions);
 }
 
 function updateProgress(){
@@ -227,6 +121,7 @@ function startChallenge(){
 
 function loadQuestion(){
 
+    locked = false;
     updateProgress();
 
     const q = chosenQuestions[currentQuestion];
@@ -261,6 +156,8 @@ function loadQuestion(){
 
 function answer(choice){
 
+    if(locked) return;
+    locked = true;
     const q = chosenQuestions[currentQuestion];
     const aligned = (choice === q.correct);
     track("answer", {
@@ -317,7 +214,8 @@ function skipQuestion(){
     const usedQuestions = chosenQuestions.map(q=> q.question);
 
     const available = questions
-        .filter(q => !usedQuestions.includes(q.question));
+        .filter(q => !usedQuestions.includes(q.question)
+                  && q.topic === chosenQuestions[currentQuestion].topic);
 
     if(available.length === 0){
         return;
@@ -337,6 +235,7 @@ function skipQuestion(){
 function showComplete(){
 
     track("complete");
+    const time = new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
     document.getElementById("progressFill").style.width = "100%";
     window.scrollTo(0, 0);
 
@@ -354,6 +253,7 @@ function showComplete(){
                 <p>
                     Show this screen to the event staff to receive your prize entry.
                 </p>
+                <p class="stamp">Completed at ${time}</p>
 
                 <div class="info-cards">
 
@@ -512,4 +412,18 @@ function nextQuestion(){
     loadQuestion();
 }
 
+let idleTimer;
+function resetIdle(){
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(() => {
+        if(!document.querySelector(".welcome-meta")){
+            // logs which question they stopped on, or "(after quiz)" on the results/answers screens
+            const q = currentQuestion < TOTAL_QUESTIONS ? chosenQuestions[currentQuestion] : null;
+            track("idle", { question: q ? q.question : "(after quiz)" });
+            showWelcome();
+        }
+    }, IDLE_RESET);
+}
+["click","touchstart","keydown"].forEach(e => document.addEventListener(e, resetIdle, { passive: true }));
+resetIdle();
 showWelcome();
