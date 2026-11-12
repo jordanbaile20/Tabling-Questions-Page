@@ -438,3 +438,8 @@ h1,h2{
     font-size:.95rem;
     margin:0 0 4px;
 }
+
+.card.dragging{
+    user-select:none;
+    -webkit-user-select:none;
+}

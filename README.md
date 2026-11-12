@@ -18,6 +18,7 @@ Built for Contact Community Services.
 - `styles.css`: all styling
 - `questions.js`: the question pool (edit this to add or change questions)
 - `script.js`: settings and quiz flow
+- `drag.js`: touch drag effect (card follows your finger and springs back); delete it and its `<script>` tag in `index.html` to remove it
 - `ContactLogo-Final.png`: logo (hidden if missing)
 
 ## Running locally
