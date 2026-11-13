@@ -255,64 +255,94 @@ function showComplete(){
     window.scrollTo(0, 0);
 
         content.innerHTML = `
-            <div class="completion">
+<div class="completion-screen">
 
-                ${logoHTML}
+    ${logoHTML}
 
-                <div class="big-emoji">🎉</div>
+    <div class="success-card">
 
-                <div class="badge">Challenge Complete</div>
+        <div class="success-header">
+            ✅ <span>Challenge Complete</span>
+        </div>
 
-                <h1>Thank You!</h1>
+        <p class="success-text">
+            Show this screen to staff for your prize entry
+        </p>
 
-                <p>
-                    Show this screen to the event staff to receive your prize entry.
-                </p>
-                <p class="stamp">Completed at ${time}</p>
+        <div class="completion-time">
+            ${time}
+        </div>
 
-                <div class="info-cards">
+    </div>
 
-                    <div class="brand-988">
-                        <div class="brand-head">
-                            <span class="brand-number">988</span>
-                            <span class="brand-name">Suicide &amp; Crisis Lifeline</span>
-                        </div>
-                        <p class="brand-text">
-                            Emotional support, mental health assistance,
-                            and crisis intervention available 24/7.
-                        </p>
-                    </div>
+    <h2 class="resource-title">
+        Which number do I use?
+    </h2>
 
-                    <div class="brand-211">
-                        <div class="brand-head">
-                            <span class="brand-number">211</span>
-                            <span class="brand-name">Community Resources</span>
-                        </div>
-                        <p class="brand-text">
-                            Connections to food, housing, transportation,
-                            utility assistance, healthcare, and local supports.
-                        </p>
-                    </div>
+    <div class="resource-grid">
 
-                </div>
+        <div class="resource-card card-988">
 
-                <p style="color:#555; line-height:1.7; margin-top:20px;">
-                    You explored two ideas from modern suicide prevention research.
-                    <br><br>
-                    Suicide prevention often begins long before a crisis develops.
-                </p>
-
-                <div class="btn-row">
-                    <button class="secondary-btn" onclick="showAnswers()">
-                        See All Questions &amp; Answers
-                    </button>
-                    <button class="continue-btn" onclick="showWelcome()">
-                        Try Again
-                    </button>
-                </div>
-
+            <div class="resource-number">
+                988
             </div>
-        `;
+
+            <p class="resource-description">
+                Emotional distress, suicidal thoughts,
+                or concern for someone else
+            </p>
+
+            <a
+                href="tel:988"
+                class="resource-button resource-button-blue"
+            >
+                📞 Call or Text
+            </a>
+
+        </div>
+
+        <div class="resource-card card-211">
+
+            <div class="resource-number">
+                211
+            </div>
+
+            <p class="resource-description">
+                Food, housing, utility assistance,
+                healthcare, and local resources
+            </p>
+
+            <a
+                href="tel:211"
+                class="resource-button resource-button-orange"
+            >
+                📞 Call
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="completion-actions">
+
+        <button
+            class="answers-btn"
+            onclick="showAnswers()"
+        >
+            See all questions and answers
+        </button>
+
+        <button
+            class="restart-link"
+            onclick="showWelcome()"
+        >
+            Try again
+        </button>
+
+    </div>
+
+</div>
+`;
 }
 
 function setupAccordions(){
