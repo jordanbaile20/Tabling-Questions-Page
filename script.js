@@ -257,7 +257,9 @@ function showComplete(){
         content.innerHTML = `
 <div class="completion-screen">
 
+<div class="completion-logo">
     ${logoHTML}
+</div>
 
     <div class="success-card">
 
