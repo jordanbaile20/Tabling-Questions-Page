@@ -296,10 +296,12 @@ function showComplete(){
         </p>
 
         <a
-            href="tel:988"
+            href="https://988lifeline.org/"
+            target="_blank"
+            rel="noopener noreferrer"
             class="resource-button resource-button-blue"
         >
-            Call or Text 988
+            Learn More About 988
         </a>
 
     </div>
@@ -322,10 +324,12 @@ function showComplete(){
         </p>
 
         <a
-            href="tel:211"
+            href="https://www.211cny.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             class="resource-button resource-button-orange"
         >
-            Call 211
+            Explore 211 Resources
         </a>
 
     </div>
