@@ -278,52 +278,71 @@ function showComplete(){
     </div>
 
     <h2 class="resource-title">
-        Which number do I use?
-    </h2>
+    Which number do I use?
+</h2>
 
-    <div class="resource-grid">
+<details class="resource-accordion accordion-988">
 
-        <div class="resource-card card-988">
+    <summary>
 
-            <div class="resource-number">
-                988
-            </div>
+        <span class="accordion-number">
+            988
+        </span>
 
-            <p class="resource-description">
-                Emotional distress, suicidal thoughts,
-                or concern for someone else
-            </p>
+        <span class="accordion-label">
+            Suicide & Crisis Lifeline
+        </span>
 
-            <a
-                href="tel:988"
-                class="resource-button resource-button-blue"
-            >
-                📞 Call or Text
-            </a>
+    </summary>
 
-        </div>
+    <div class="accordion-content">
 
-        <div class="resource-card card-211">
+        <p>
+            Emotional distress, suicidal thoughts, or concern for someone else.
+        </p>
 
-            <div class="resource-number">
-                211
-            </div>
-
-            <p class="resource-description">
-                Food, housing, utility assistance,
-                healthcare, and local resources
-            </p>
-
-            <a
-                href="tel:211"
-                class="resource-button resource-button-orange"
-            >
-                📞 Call
-            </a>
-
-        </div>
+        <a
+            href="tel:988"
+            class="resource-button resource-button-blue"
+        >
+            Call or Text 988
+        </a>
 
     </div>
+
+</details>
+
+<details class="resource-accordion accordion-211">
+
+    <summary>
+
+        <span class="accordion-number">
+            211
+        </span>
+
+        <span class="accordion-label">
+            Community Resources
+        </span>
+
+    </summary>
+
+    <div class="accordion-content">
+
+        <p>
+            Food, housing, utility assistance, healthcare, transportation,
+            and local resources.
+        </p>
+
+        <a
+            href="tel:211"
+            class="resource-button resource-button-orange"
+        >
+            Call 211
+        </a>
+
+    </div>
+
+</details>
 
     <div class="completion-actions">
 
