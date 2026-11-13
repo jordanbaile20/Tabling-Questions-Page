@@ -474,7 +474,7 @@ h1,h2{
     border:1px solid #7bc67b;
     border-radius:18px;
     padding:24px;
-    margin:20px 0 28px;
+    margin:20px 0 20px;
 }
 
 .success-header{
@@ -496,7 +496,7 @@ h1,h2{
 }
 
 .resource-title{
-    text-align:center;
+    text-align:left;
     margin:24px 0 12px;
     font-size:.95rem;
     font-weight:600;
