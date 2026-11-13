@@ -496,18 +496,13 @@ h1,h2{
 }
 
 .resource-title{
-    text-align:left;
-    margin:0 0 16px;
-    font-size:1.6rem;
+    text-align:center;
+    margin:24px 0 12px;
+    font-size:.95rem;
+    font-weight:600;
+    color:#666;
 }
 
-.resource-988{
-    border-left:5px solid #005EB8;
-}
-
-.resource-211{
-    border-left:5px solid #B96200;
-}
 
 .resource-988 .answer-q{
     color:#005EB8;
@@ -583,9 +578,5 @@ h1,h2{
 
     .completion-time{
         font-size:1.75rem;
-    }
-
-    .resource-title{
-        text-align:center;
     }
 }
