@@ -278,24 +278,18 @@ function showComplete(){
     </div>
 
     <h2 class="resource-title">
-    Which number do I use?
+    Need support or resources?
 </h2>
 
-<details class="resource-accordion accordion-988">
+<details class="answer-item resource-988">
 
-    <summary>
+    <summary class="answer-q">
 
-        <span class="accordion-number">
-            988
-        </span>
-
-        <span class="accordion-label">
-            Suicide & Crisis Lifeline
-        </span>
+        988 · Suicide & Crisis Lifeline
 
     </summary>
 
-    <div class="accordion-content">
+    <div class="answer-content">
 
         <p>
             Emotional distress, suicidal thoughts, or concern for someone else.
@@ -312,21 +306,15 @@ function showComplete(){
 
 </details>
 
-<details class="resource-accordion accordion-211">
+<details class="answer-item resource-211">
 
-    <summary>
+    <summary class="answer-q">
 
-        <span class="accordion-number">
-            211
-        </span>
-
-        <span class="accordion-label">
-            Community Resources
-        </span>
+        211 · Community Resources
 
     </summary>
 
-    <div class="accordion-content">
+    <div class="answer-content">
 
         <p>
             Food, housing, utility assistance, healthcare, transportation,
@@ -363,7 +351,8 @@ function showComplete(){
     </div>
 
 </div>
-`;
+`; 
+    setupAccordions();
 }
 
 function setupAccordions(){
