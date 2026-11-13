@@ -325,6 +325,19 @@ h1,h2{
     background:#eef6ff;
 }
 
+/* Skip button: same fill-timer as Continue, in the outlined style */
+.secondary-btn.timed-btn:disabled,
+.secondary-btn.timed-btn:disabled:hover{
+    background:white;
+    color:#64748b;
+    border-color:#cbd5e1;
+    cursor:not-allowed;
+}
+
+.secondary-btn .timed-fill{
+    background:#dbeafe;
+}
+
 .answers-intro{
     color:#555;
     margin:0 0 4px;

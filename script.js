@@ -3,6 +3,9 @@ const IDLE_RESET = 120000;     // ms of no taps before returning to the welcome 
 
 const CONTINUE_DELAY = 2000; //ms before Continue button unlocks. Here as a fallback.
 
+const SKIP_COOLDOWN = 2500;  // ms the Skip button stays locked after a question is skipped (stops rapid-fire skipping)
+let skipTimer = null;
+
 const TRACK_URL = "https://script.google.com/macros/s/AKfycby7LzPqfeq_RciwbWbRbim4NeLljaD0KUEaQ67QikYIZ-B03YQ21ac1S_JBCfvwi7km/exec";
 let playId = null;
 
@@ -119,10 +122,11 @@ function startChallenge(){
     loadQuestion();
 }
 
-function loadQuestion(){
+function loadQuestion(cooldown = false){
 
     locked = false;
     updateProgress();
+    clearTimeout(skipTimer);
 
     const q = chosenQuestions[currentQuestion];
 
@@ -145,11 +149,14 @@ function loadQuestion(){
             ${q.options[1]}
         </button>
 
-        <button    
-            class="secondary-btn"
-            style ="margin-top:24px;"
+        <button
+            class="secondary-btn timed-btn${cooldown ? "" : " ready"}"
+            id="skipBtn"
+            style="margin-top:24px; --delay:${SKIP_COOLDOWN}ms"
+            ${cooldown ? "disabled" : ""}
             onclick="skipQuestion()">
-            Try Another Question
+            <span class="timed-fill"></span>
+            <span class="timed-label">Skip this question</span>
         </button>
     `;
 }
@@ -229,7 +236,15 @@ function skipQuestion(){
     
     chosenQuestions[currentQuestion] = replacement;
 
-    loadQuestion();
+    loadQuestion(true);
+
+    skipTimer = setTimeout(() => {
+        const btn = document.getElementById("skipBtn");
+        if(btn){
+            btn.disabled = false;
+            btn.classList.add("ready");
+        }
+    }, SKIP_COOLDOWN);
 }
 
 function showComplete(){
