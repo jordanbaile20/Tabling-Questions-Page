@@ -7,7 +7,7 @@ Built for Contact Community Services.
 ## Features
 
 - Two random questions per play (at least one 988/211 question and one research-concept question), with shuffled answer order and no repeats
-- "Try Another Question" button to swap a question
+- "Skip this question" button to swap a question (locks briefly after each skip so it can't be tapped repeatedly)
 - Short research-based explanation after each answer
 - Completion screen with 988 and 211 information
 - "All Questions & Answers" accordion showing the correct (✓) and incorrect (✗) option for every question
@@ -37,12 +37,13 @@ Questions are in the `questions` array in `questions.js`:
         explanation: "Shown after answering. HTML like <strong> is allowed."
     }
 
-Every question needs a `topic`. "Try Another Question" swaps in a question of the same topic, so the mix is always kept. Always use two options, keep them parallel in form and length, and change `TOTAL_QUESTIONS` to adjust how many are shown per play.
+Every question needs a `topic`. "Skip this question" swaps in a question of the same topic, so the mix is always kept. Always use two options, keep them parallel in form and length, and change `TOTAL_QUESTIONS` to adjust how many are shown per play.
 
 ## Settings (top of `script.js`)
 
 - `TOTAL_QUESTIONS`: questions per play
 - `IDLE_RESET`: ms of inactivity before returning to the welcome screen
+- `SKIP_COOLDOWN`: ms the Skip button stays locked after a skip
 - The completion screen shows a completion time so staff can tell it's fresh. Prizes are for participation, not correct answers.
 
 ## Notes
