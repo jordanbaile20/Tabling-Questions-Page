@@ -501,46 +501,20 @@ h1,h2{
     font-size:1.6rem;
 }
 
-.resource-grid{
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:14px;
-    margin-bottom:24px;
+.resource-988{
+    brder-left:5px solid #005EB8;
 }
 
-.resource-card{
-    border-radius:18px;
-    padding:18px;
-    text-align:left;
+.resource-211{
+    border-left:5px solid #B96200;
 }
 
-.card-988{
-    background:#edf3fb;
-}
-
-.card-211{
-    background:#f6ebdf;
-}
-
-.resource-number{
-    font-size:2.4rem;
-    font-weight:800;
-    line-height:1;
-    margin-bottom:12px;
-}
-
-.card-988 .resource-number{
+.resource-988 .answer-q{
     color:#005EB8;
 }
 
-.card-211 .resource-number{
+.resource-211 .answer-q{
     color:#B96200;
-}
-
-.resource-description{
-    min-height:55px;
-    line-height:1.5;
-    margin-bottom:14px;
 }
 
 .resource-button{
