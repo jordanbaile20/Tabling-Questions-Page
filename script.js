@@ -255,64 +255,108 @@ function showComplete(){
     window.scrollTo(0, 0);
 
         content.innerHTML = `
-            <div class="completion">
+<div class="completion-screen">
 
-                ${logoHTML}
+<div class="completion-logo">
+    ${logoHTML}
+</div>
 
-                <div class="big-emoji">🎉</div>
+    <div class="success-card">
 
-                <div class="badge">Challenge Complete</div>
+        <div class="success-header">
+            ✅ <span>Challenge Complete</span>
+        </div>
 
-                <h1>Thank You!</h1>
+        <p class="success-text">
+            Show this screen to staff for your prize entry
+        </p>
 
-                <p>
-                    Show this screen to the event staff to receive your prize entry.
-                </p>
-                <p class="stamp">Completed at ${time}</p>
+        <div class="completion-time">
+            ${time}
+        </div>
 
-                <div class="info-cards">
+    </div>
 
-                    <div class="brand-988">
-                        <div class="brand-head">
-                            <span class="brand-number">988</span>
-                            <span class="brand-name">Suicide &amp; Crisis Lifeline</span>
-                        </div>
-                        <p class="brand-text">
-                            Emotional support, mental health assistance,
-                            and crisis intervention available 24/7.
-                        </p>
-                    </div>
+    <h2 class="resource-title">
+    Need support or resources?
+</h2>
 
-                    <div class="brand-211">
-                        <div class="brand-head">
-                            <span class="brand-number">211</span>
-                            <span class="brand-name">Community Resources</span>
-                        </div>
-                        <p class="brand-text">
-                            Connections to food, housing, transportation,
-                            utility assistance, healthcare, and local supports.
-                        </p>
-                    </div>
+<details class="answer-item resource-988">
 
-                </div>
+    <summary class="answer-q">
 
-                <p style="color:#555; line-height:1.7; margin-top:20px;">
-                    You explored two ideas from modern suicide prevention research.
-                    <br><br>
-                    Suicide prevention often begins long before a crisis develops.
-                </p>
+        988 · Suicide & Crisis Lifeline
 
-                <div class="btn-row">
-                    <button class="secondary-btn" onclick="showAnswers()">
-                        See All Questions &amp; Answers
-                    </button>
-                    <button class="continue-btn" onclick="showWelcome()">
-                        Try Again
-                    </button>
-                </div>
+    </summary>
 
-            </div>
-        `;
+    <div class="answer-content">
+
+        <p>
+            Emotional distress, suicidal thoughts, or concern for someone else.
+        </p>
+
+        <a
+            href="https://988lifeline.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="resource-button resource-button-blue"
+        >
+            Learn More About 988
+        </a>
+
+    </div>
+
+</details>
+
+<details class="answer-item resource-211">
+
+    <summary class="answer-q">
+
+        211 · Community Resources
+
+    </summary>
+
+    <div class="answer-content">
+
+        <p>
+            Food, housing, utility assistance, healthcare, transportation,
+            and local resources.
+        </p>
+
+        <a
+            href="https://www.211cny.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="resource-button resource-button-orange"
+        >
+            Explore 211 Resources
+        </a>
+
+    </div>
+
+</details>
+
+    <div class="completion-actions">
+
+        <button
+            class="answers-btn"
+            onclick="showAnswers()"
+        >
+            See all questions and answers
+        </button>
+
+        <button
+            class="restart-link"
+            onclick="showWelcome()"
+        >
+            Try again
+        </button>
+
+    </div>
+
+</div>
+`; 
+    setupAccordions();
 }
 
 function setupAccordions(){

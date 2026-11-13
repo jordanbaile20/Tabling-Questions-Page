@@ -456,3 +456,127 @@ h1,h2{
     user-select:none;
     -webkit-user-select:none;
 }
+
+/* ==========================================
+   New Completion Screen
+   ========================================== */
+
+.completion-screen{
+    text-align:center;
+}
+
+.completion-logo{
+    margin-bottom:10px;
+}
+
+.success-card{
+    background:#dff0dd;
+    border:1px solid #7bc67b;
+    border-radius:18px;
+    padding:24px;
+    margin:20px 0 20px;
+}
+
+.success-header{
+    color:#0a6b0a;
+    font-weight:700;
+    font-size:1.15rem;
+    margin-bottom:10px;
+}
+
+.success-text{
+    font-size:1.1rem;
+    margin:10px 0;
+}
+
+.completion-time{
+    color:#006400;
+    font-size:2rem;
+    font-weight:700;
+}
+
+.resource-title{
+    text-align:left;
+    margin:24px 0 12px;
+    font-size:.95rem;
+    font-weight:600;
+    color:#666;
+}
+
+
+.resource-988 .answer-q{
+    color:#005EB8;
+}
+
+.resource-211 .answer-q{
+    color:#B96200;
+}
+
+.resource-button{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    padding:12px;
+    border-radius:12px;
+    font-weight:600;
+    background:white;
+    transition:.2s;
+}
+
+.resource-button-blue{
+    color:#005EB8;
+    border:2px solid #005EB8;
+}
+
+.resource-button-blue:hover{
+    background:#eaf3ff;
+}
+
+.resource-button-orange{
+    color:#B96200;
+    border:2px solid #B96200;
+}
+
+.resource-button-orange:hover{
+    background:#fff5ea;
+}
+
+.answers-btn{
+    width:100%;
+    border:none;
+    background:#2563eb;
+    color:white;
+    padding:16px;
+    border-radius:14px;
+    font-size:1rem;
+    font-weight:600;
+    font-family:inherit;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.answers-btn:hover{
+    background:#1d4ed8;
+}
+
+.restart-link{
+    display:block;
+    margin:16px auto 0;
+    border:none;
+    background:none;
+    color:#6b7280;
+    text-decoration:underline;
+    cursor:pointer;
+    font-size:1rem;
+}
+
+@media (max-width:600px){
+
+    .resource-grid{
+        grid-template-columns:1fr;
+    }
+
+    .completion-time{
+        font-size:1.75rem;
+    }
+}
