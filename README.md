@@ -17,6 +17,7 @@ Built for Contact Community Services.
 - `index.html`: page shell
 - `styles.css`: all styling
 - `questions.js`: the question pool (edit this to add or change questions)
+- `help.js`: definition bubbles for `[[terms]]` and the "Need a hint?" toggle
 - `script.js`: settings and quiz flow
 - `drag.js`: touch drag effect (card follows your finger and springs back); delete it and its `<script>` tag in `index.html` to remove it
 - `ContactLogo-Final.png`: logo (hidden if missing)
@@ -38,6 +39,13 @@ Questions are in the `questions` array in `questions.js`:
     }
 
 Every question needs a `topic`. "Skip this question" swaps in a question of the same topic, so the mix is always kept. Always use two options, keep them parallel in form and length, and change `TOTAL_QUESTIONS` to adjust how many are shown per play.
+
+## Hints and definitions
+
+- `hint`: optional one-line nudge on each question, shown behind "Need a hint?" (don't give the answer away)
+- `[[term]]` in a question or explanation gives that word a dotted underline and a definition bubble; add the definition to `GLOSSARY` in `questions.js`
+- Keep jargon out of answer options (tapping a term there would also answer the question) and define it in the explanation instead
+- Emphasis: one `<strong>` phrase per explanation at most; dotted underline is reserved for definitions
 
 ## Settings (top of `script.js`)
 
