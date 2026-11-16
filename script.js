@@ -52,6 +52,7 @@ function randomizeOptions(q){
         question: q.question,
         explanation: q.explanation,
         topic: q.topic,
+        hint: q.hint,
         options: order.map(i => q.options[i]),
         correct: order.indexOf(q.correct)
     };
@@ -138,8 +139,14 @@ function loadQuestion(cooldown = false){
         </p>
 
         <div class="question">
-            ${q.question}
+            ${withTerms(q.question)}
         </div>
+
+        ${q.hint ? `
+        <button class="hint-btn" id="hintBtn" aria-expanded="false" aria-controls="hintBox" onclick="toggleHint()">
+            <span class="hint-icon" aria-hidden="true">?</span> Need a hint?
+        </button>
+        <div class="hint-box" id="hintBox" hidden>${q.hint}</div>` : ""}
 
         <button class="answer-btn" onclick="answer(0)">
             ${q.options[0]}
@@ -192,7 +199,7 @@ function answer(choice){
             </div>
 
             <div class="research-explanation">
-                ${q.explanation}
+                ${withTerms(q.explanation)}
             </div>
 
         </div>
@@ -431,7 +438,7 @@ function showAnswers(){
             ).join("")}
 
             <div class="answer-why">
-                ${q.explanation}
+                ${withTerms(q.explanation)}
             </div>
 
         </div>
@@ -443,7 +450,7 @@ function showAnswers(){
         <h1>All Questions &amp; Answers</h1>
 
         <p class="answers-intro">
-            The research-supported answer is marked ✓ and the other option is marked ✗.
+            ✓ matches the research. ✗ does not.
         </p>
 
         ${navButtons}
