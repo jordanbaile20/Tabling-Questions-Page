@@ -25,6 +25,8 @@
         card.style.touchAction = scrollable ? "pan-y" : "none";
     }
     new MutationObserver(updateTouchAction).observe(content, { childList: true });
+    // Also re-check whenever the card's height changes (e.g. accordions opening/closing)
+    new ResizeObserver(updateTouchAction).observe(card);
     window.addEventListener("resize", updateTouchAction);
     updateTouchAction();
 
