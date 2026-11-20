@@ -32,12 +32,72 @@ let chosenQuestions = [];
 let currentQuestion = 0;
 let locked = false;
 
+// ---- Links & resources (edit here) -------------------------------------
+const CONTACT_URL = "https://www.contactsyracuse.org/";
+const OCSPC_URL   = "https://www.ocspc.org/";
+const URL_211 = "https://www.211cny.com/";
+const URL_988 = "https://www.988lifeline.org/";
+
+// Shown inside the single accordion on the completion screen, in this order.
+// color = base color for each row (used as a light tinted background).
+const RESOURCES = [
+    {
+        name: "988 Suicide & Crisis Lifeline",
+        desc: "Call or text 988, anytime. For distress, crisis, or worry about someone.",
+        url: URL_988,
+        color: "#0278a0"
+    },
+    {
+        name: "211 CNY",
+        desc: "Connects you to any community resource: housing, food, health, and more.",
+        url: URL_211,
+        color: "#FFBA00"
+    },
+    {
+        name: "Contact Community Services",
+        desc: "Crisis hotline, counseling, and trainings in Central New York.",
+        url: CONTACT_URL,
+        color: "#67B235"
+    },
+    {
+        name: "Onondaga County Suicide Prevention Coalition",
+        desc: "Local events, trainings, and prevention resources.",
+        url: OCSPC_URL,
+        color: "#582d89"
+    }
+].filter(r => r.url);   // a row with no URL yet is skipped
+
+function resourceListHTML(){
+    return RESOURCES.map(r => `
+        <a class="resource-link"
+           style="--tint:${r.color}1A; --tint-strong:${r.color}33; --edge:${r.color}59"
+           href="${r.url}"
+           target="_blank"
+           rel="noopener noreferrer">
+            <span class="resource-text">
+                <span class="resource-name">${r.name}</span>
+                <span class="resource-desc">${r.desc}</span>
+            </span>
+            <span class="resource-arrow" aria-hidden="true">↗</span>
+            <span class="sr-only">(opens in a new tab)</span>
+        </a>
+    `).join("");
+}
+
+// Logo is a link to the Contact website (opens a new tab).
+// If the image file is missing, the whole link is hidden.
 const logoHTML = `
-    <img
-        src="ContactLogo-Final.png"
-        class="logo"
-        alt="Contact Community Services"
-        onerror="this.style.display='none'">
+    <a class="logo-link"
+       href="${CONTACT_URL}"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Contact Community Services website (opens in a new tab)">
+        <img
+            src="ContactLogo-Final.png"
+            class="logo"
+            alt="Contact Community Services"
+            onerror="this.parentElement.style.display='none'">
+    </a>
 `;
 
 function randomizeOptions(q){
@@ -284,61 +344,16 @@ function showComplete(){
 
     </div>
 
-    <h2 class="resource-title">
-    Need support or resources?
-</h2>
-
-<details class="answer-item resource-988">
+<details class="answer-item resource-box">
 
     <summary class="answer-q">
-
-        988 · Suicide & Crisis Lifeline
-
+        Need support or resources?
     </summary>
 
     <div class="answer-content">
-
-        <p>
-            Emotional distress, suicidal thoughts, or concern for someone else.
-        </p>
-
-        <a
-            href="https://988lifeline.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="resource-button resource-button-blue"
-        >
-            Learn More About 988
-        </a>
-
-    </div>
-
-</details>
-
-<details class="answer-item resource-211">
-
-    <summary class="answer-q">
-
-        211 · Community Resources
-
-    </summary>
-
-    <div class="answer-content">
-
-        <p>
-            Food, housing, utility assistance, healthcare, transportation,
-            and local resources.
-        </p>
-
-        <a
-            href="https://www.211cny.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="resource-button resource-button-orange"
-        >
-            Explore 211 Resources
-        </a>
-
+        <div class="resource-list">
+            ${resourceListHTML()}
+        </div>
     </div>
 
 </details>
