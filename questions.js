@@ -72,7 +72,7 @@ const questions = [
     correct: 0,
     topic: "services",
     hint: "Think about who can respond to a location.",
-    explanation: "Call 911 for immediate danger. <strong>988 provides crisis support.</strong>"
+    explanation: "Call 911 for immediate danger. <strong>988 provides [[crisis]] support.</strong>"
 },
 
 {
