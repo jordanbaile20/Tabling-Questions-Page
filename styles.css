@@ -507,6 +507,24 @@ h1,h2{
     gap:10px;
 }
 
+/* Question restated on the result screen: context, not the focus */
+.result-question{
+    margin:0 0 16px;
+    color:#4b5563;
+    font-size:1rem;
+    line-height:1.5;
+}
+
+.result-question-label{
+    display:block;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:.75rem;
+    font-weight:700;
+    color:#6b7280;
+    margin-bottom:2px;
+}
+
 /* One big tappable row per resource (min 64px tall for thumbs).
    Each row gets a light wash of its own color (set per row in script.js). */
 .resource-link{
