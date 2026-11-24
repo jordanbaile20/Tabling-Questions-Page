@@ -248,6 +248,11 @@ function answer(choice){
             ${aligned ? "Your prediction matched the research" : "The research suggests something different"}
         </h2>
 
+	<p class="result-question">
+            <span class="result-question-label">The question</span>
+            ${withTerms(q.question)}
+        </p>
+
         <div class="${aligned ? "correct" : "insight"}">
 
             <div class="research-label">
